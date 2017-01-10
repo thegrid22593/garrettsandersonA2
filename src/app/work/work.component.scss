@@ -1,0 +1,15 @@
+@import '../../scss/base';
+
+.work {
+  ul {
+    list-style: none;
+    li {
+      display: inline-table;
+      .project {
+        background: $brand-grey;
+        min-height: 300px;
+        width: 33%;
+      }
+    }
+  }
+}
