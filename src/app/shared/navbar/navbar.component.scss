@@ -1,0 +1,39 @@
+@import '../../../scss/base';
+
+header {
+	position: relative;
+	width: 100%;
+}
+
+.main-nav {
+	width: 100%;
+	background: $brand-black;
+	padding: 0.5rem 0;
+  position: fixed;
+	min-height: 80px;
+  z-index: 100;
+	svg {
+		max-width: 20px;
+		fill: $brand-blue;
+		float: left;
+	}
+	nav {
+		float: right;
+		width: 50%;
+	}
+	ul {
+		list-style: none;
+		li {
+			display: inline-block;
+			a {
+				color: $brand-grey;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+				font-size: 0.8rem;
+				&:hover {
+					color: $brand-blue;
+				}
+			}
+		}
+	}
+}
