@@ -4,11 +4,40 @@
   ul {
     list-style: none;
     li {
-      display: inline-table;
       .project {
-        background: $brand-grey;
-        min-height: 300px;
-        width: 33%;
+        min-height: 400px;
+        width: calc(100%/3);
+        float: left;
+        position: relative;
+        img.project-logo {
+          max-width: 200px;
+          @include transition(0.18s transform ease-in-out);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%) scale(1);
+          -ms-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+        }
+        .project-details {
+          position: absolute;
+          bottom: -32px;
+          background: rgba(0,0,0, 0.8);
+          width: 100%;
+          padding: 0.4rem 1rem;
+          color: white;
+          @include transition(0.2s all ease-in-out);
+        }
+      }
+      &:hover > .project img {
+        -webkit-transform: translate(-50%, -50%) scale(0.8);
+        -ms-transform: translate(-50%, -50%) scale(0.8);
+        transform: translate(-50%, -50%) scale(0.8);
+        transform-origin: center;
+        cursor: pointer;
+      }
+      &:hover > .project .project-details {
+        bottom: 0;
       }
     }
   }

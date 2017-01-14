@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import {WpService} from './services/wp-service';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { WorkComponent } from './work/work.component';
@@ -18,7 +20,7 @@ import { WorkComponent } from './work/work.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [WpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

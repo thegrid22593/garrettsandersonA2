@@ -1,13 +1,9 @@
 <section class="work">
   <ul>
-    <li>
-      <div class="project">
-        <h1>Project 1</h1>
-      </div>
-    </li>
-    <li>
-      <div class="project">
-        <h1>Project 2</h1>
+    <li *ngFor="let webProject of allWebProjects; let i=index;">
+      <div *ngIf="i<7" class="project" [style.background-color]="webProject.acf.background_color">
+        <img class="project-logo" src="{{webProject.acf.project_logo}}" alt="webProject.acf.project_name">
+        <div class="project-details">{{webProject.acf.project_intro_details}}</div>
       </div>
     </li>
   </ul>
