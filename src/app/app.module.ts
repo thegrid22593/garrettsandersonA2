@@ -11,6 +11,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { WorkComponent } from './work/work.component';
 import { HireMeComponent } from './hire-me/hire-me.component';
 import { HomeComponent } from './home/home.component';
+import { WorkDetailComponent } from './work/work-detail/work-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     WorkComponent,
     HireMeComponent,
-    HomeComponent
+    HomeComponent,
+    WorkDetailComponent
   ],
   imports: [
     BrowserModule,
