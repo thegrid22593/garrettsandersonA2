@@ -1,0 +1,23 @@
+@import '../../scss/base';
+
+.central-display {
+  background: $brand-blue;
+  height: 700px;
+  position: relative;
+  .headlines {
+    @include center-align;
+    text-align: center;
+    h1, h4 {
+      color: #fff;
+    }
+    h1 {
+      letter-spacing: 0.1rem;
+      font-size: 2rem;
+    }
+    h4 {
+      letter-spacing: 0.1rem;
+      font-family: 'Lato', sans-serif;
+      font-weight: 100;
+    }
+  }
+}
