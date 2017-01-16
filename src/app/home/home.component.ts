@@ -9,8 +9,8 @@ export class HomeComponent implements OnInit {
   public title: string;
   public subTitle: string;
   constructor() {
-    this.title = 'Front End Web Development';
-    this.subTitle = 'Angular, SASS, Bower, WordPress';
+    this.title = 'Responsive Front End Web Development';
+    this.subTitle = 'HTML, CSS, JavaScript, Angular, SASS, Bower, Performance, WordPress';
   }
 
   ngOnInit() {
