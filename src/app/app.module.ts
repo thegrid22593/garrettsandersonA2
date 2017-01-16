@@ -8,12 +8,14 @@ import {WpService} from './services/wp-service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { WorkComponent } from './work/work.component';
+import { HireMeComponent } from './hire-me/hire-me.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    WorkComponent
+    WorkComponent,
+    HireMeComponent
   ],
   imports: [
     BrowserModule,
