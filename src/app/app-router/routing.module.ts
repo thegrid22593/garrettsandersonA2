@@ -9,6 +9,10 @@ import { HireMeComponent } from '../hire-me/hire-me.component';
 
 const appRoutes: Routes = [
   {
+    path: '',
+    component: HomeComponent
+  },
+  {
     path: 'home',
     component: HomeComponent
   },

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +12,19 @@ export class HomeComponent implements OnInit {
   constructor() {
     this.title = 'Responsive Front End Web Development';
     this.subTitle = 'HTML, CSS, JavaScript, Angular, SASS, Bower, Performance, WordPress';
+
+
+
   }
 
   ngOnInit() {
-
+    $('#click').on('click', function(e) {
+      e.preventDefault();
+      console.log('working');
+      let section = $(this).attr("href");
+      $("html, body").animate({
+          scrollTop: $(section).offset().top + 40
+      }, 400);
+    });
   }
-
 }
