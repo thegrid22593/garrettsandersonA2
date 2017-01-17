@@ -1,0 +1,9 @@
+<div style="clear: both;"></div>
+
+<section class="testimonials" *ngIf="testimonials">
+  <div  *ngFor="let testimonial of testimonials" class="tesimonial">
+    <p class="testimonial-content">{{testimonial.acf.testimonial_text}}</p>
+    <span>{{testimonial.acf.testimonial_author_name}}</span>
+    <span>{{testimonial.acf.testimonial_client}}</span>
+  </div>
+</section>

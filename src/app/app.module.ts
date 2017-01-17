@@ -12,6 +12,7 @@ import { WorkComponent } from './work/work.component';
 import { HireMeComponent } from './hire-me/hire-me.component';
 import { HomeComponent } from './home/home.component';
 import { WorkDetailComponent } from './work/work-detail/work-detail.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { WorkDetailComponent } from './work/work-detail/work-detail.component';
     WorkComponent,
     HireMeComponent,
     HomeComponent,
-    WorkDetailComponent
+    WorkDetailComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,

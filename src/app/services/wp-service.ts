@@ -16,6 +16,13 @@ export class WpService {
     .catch(this.handleError)
   }
 
+  getAllTestimonails() {
+    return this._http.get('http://gsandersongraphics.com/wp-json/wp/v2/testimonials')
+    .map((response: Response) => response.json() )
+    .toPromise()
+    .catch(this.handleError);
+  }
+
   private handleError(error: Response) {
         console.error(error);
         if(error.status == 404) {

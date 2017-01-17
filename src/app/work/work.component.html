@@ -1,7 +1,7 @@
 <section class="work">
   <ul>
     <li *ngFor="let webProject of allWebProjects; let i=index;">
-      <div *ngIf="i<7" class="project" [style.background-color]="webProject.acf.background_color">
+      <div *ngIf="i<6" class="project" [style.background-color]="webProject.acf.background_color">
         <img class="project-logo" src="{{webProject.acf.project_logo}}" alt="webProject.acf.project_name">
         <div class="project-details">{{webProject.acf.project_intro_details}}</div>
       </div>
