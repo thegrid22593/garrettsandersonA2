@@ -1,7 +1,15 @@
 <section class="testimonials" *ngIf="testimonials">
-  <div  *ngFor="let testimonial of testimonials" class="tesimonial">
-    <p class="testimonial-content">{{testimonial.acf.testimonial_text}}</p>
-    <span>{{testimonial.acf.testimonial_author_name}}</span>
-    <span>{{testimonial.acf.testimonial_client}}</span>
+  <div class="wrapper">
+    <h2>What My Clients Are Saying</h2>
+    <div  *ngFor="let testimonial of testimonials" class="testimonial">
+      <p class="testimonial-content">{{testimonial.acf.testimonial_text}}</p>
+      <span>{{testimonial.acf.testimonial_author_name}}</span>
+      <span>{{testimonial.acf.testimonial_client}}</span>
+    </div>
+    <div *ngFor="let testimonial of testimonials" class="testimonial-select">
+      <div class="select"><img src="{{testimonial.acf.client_logo}}" alt="{{testimonial.acf.testimonial_client}}"></div>
+    </div>
   </div>
+
+
 </section>

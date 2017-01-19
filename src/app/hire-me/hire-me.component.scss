@@ -1,0 +1,9 @@
+@import '../../scss/base';
+
+.main-headline {
+  h1 {
+    font-size: 2.5rem;
+    color: $brand-blue;
+    padding: 5rem 0 3rem 0;
+  }
+}
