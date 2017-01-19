@@ -4,6 +4,60 @@
   h1 {
     font-size: 2.5rem;
     color: $brand-blue;
-    padding: 5rem 0 3rem 0;
+    padding: 5rem 0 0rem 0;
+    margin: 0;
   }
+  p {
+    font-size: 1rem;
+    color: $brand-dark-grey;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+}
+
+form.inquiry-form {
+
+  h6 {
+    font-size: 1rem;
+    font-weight: 900;
+    padding: 0.5rem 0;
+  }
+
+  hr {
+    margin-bottom: 2rem;
+  }
+
+  .block {
+    display: block;
+    width: 100%;
+    clear: both;
+
+    label {
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      font-size: 0.7rem;
+      color: $brand-dark-grey;
+      text-align: right;
+      width: 40%;
+      float: left;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      padding: 0.5rem 0.5rem;
+      width: 50%;
+      margin: 0.5rem 0;
+      float: right;
+
+      &:focus {
+        outline: none;
+        border: 1px solid $brand-pink;
+      }
+    }
+  }
+
+
 }
