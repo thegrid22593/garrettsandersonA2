@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import * as _ from 'lodash';
 
 @Injectable()
 export class WpService {
@@ -14,6 +15,13 @@ export class WpService {
     .map((response: Response) => response.json() )
     .toPromise()
     .catch(this.handleError)
+  }
+
+  getWebProjectBySlug(slug: string) {
+    return this._http.get('http://gsandersongraphics.com/wp-json/wp/v2/web-projects')
+    .map((response: Response) => _.find(response.json(), {'slug': slug}))
+    .toPromise()
+    .catch(this.handleError);
   }
 
   getAllTestimonails() {

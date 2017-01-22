@@ -1,3 +1,16 @@
-<p>
-  work-detail works!
-</p>
+<section class="work-detail" *ngIf="activeProject">
+  <div class="wrapper">
+    <div class="full">
+      <div class="centered full">
+        <img src="{{activeProject.acf.featured_image}}" alt="" width=300>
+      </div>
+      <h1>{{activeProject.acf.project_name}}</h1>
+      <p>{{activeProject.acf.project_details}}</p>
+
+      <h4>Final Design</h4>
+      <div *ngFor="let image of activeProjectImages">
+        <img src="{{image.final_design_image}}" alt="">
+      </div>
+    </div>
+  </div>
+</section>

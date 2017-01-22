@@ -1,0 +1,65 @@
+.wrapper {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.one-fourth {
+  width: 25%;
+}
+
+.one-third {
+  width: 33%;
+}
+
+.half {
+  width: 50%;
+}
+
+.two-thirds {
+  width: 66%;
+}
+
+.three-fourths {
+  width: 75%;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.full {
+  width: 100%;
+}
+
+.tcenter {
+  text-align: center;
+}
+
+.tleft {
+  text-align: left;
+}
+
+.tright {
+  text-align: right;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.clearfix {
+  display: block;
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}

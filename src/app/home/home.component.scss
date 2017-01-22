@@ -30,7 +30,6 @@
       text-transform: uppercase;
       @include transition(0.2s all ease-in-out);
       border: 1px solid #fff;
-      border-radius: 10px;
       padding: 0.5rem 0.1rem;
       max-width: 200px;
 
@@ -41,5 +40,34 @@
       }
     }
   }
+}
 
+.skills-and-passions {
+  padding: 4rem 0;
+  background: $brand-blue;
+  position: relative;
+  overflow: hidden;
+
+  svg {
+    max-width: 35px;
+    fill: white;
+  }
+
+  h1 {
+    color: white;
+    font-weight: 100;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 100;
+  }
+
+  p {
+    color: white;
+    line-height: 1.5rem;
+  }
 }

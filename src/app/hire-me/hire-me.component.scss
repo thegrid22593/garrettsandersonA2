@@ -4,7 +4,7 @@
   h1 {
     font-size: 2.5rem;
     color: $brand-blue;
-    padding: 5rem 0 0rem 0;
+    padding: 3rem 0 1rem 0;
     margin: 0;
   }
   p {
@@ -17,15 +17,30 @@
   }
 }
 
+.inquiry {
+  .intro-message {
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
 form.inquiry-form {
 
   h6 {
-    font-size: 1rem;
-    font-weight: 900;
+    font-size: 2rem;
+    font-weight: 100;
     padding: 0.5rem 0;
+    letter-spacing: 0.1rem;
+    color: $brand-blue;
+    text-transform: uppercase;
   }
 
   hr {
+    margin-bottom: 2rem;
+    border: 1px solid #eee;
+  }
+
+  p {
     margin-bottom: 2rem;
   }
 
@@ -33,30 +48,95 @@ form.inquiry-form {
     display: block;
     width: 100%;
     clear: both;
+    border-top: 1px solid #eee;
 
     label {
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      font-size: 0.7rem;
-      color: $brand-dark-grey;
+      letter-spacing: 0.2rem;
+      font-size: 0.8rem;
+      padding: 4rem 0;
+      color: $brand-light-grey;
       text-align: right;
-      width: 40%;
+      width: 35%;
       float: left;
+      vertical-align: middle;
+      @include transition(0.2s all ease-in-out);
+      &.active {
+        color: $brand-dark-grey;
+      }
     }
 
     input[type="text"],
     input[type="email"] {
-      padding: 0.5rem 0.5rem;
-      width: 50%;
-      margin: 0.5rem 0;
-      float: right;
+      // padding: 0.5rem 0.5rem;
+      width: 45%;
+      padding: 1rem;
+      margin: 3rem 0 3rem 1rem;
+      font-size: 0.8rem;
+      float: left;
+      vertical-align: middle;
+      @include transition(0.2s all ease-in-out);
 
       &:focus {
         outline: none;
-        border: 1px solid $brand-pink;
+        border: 1px solid $brand-dark-grey;
       }
     }
+
+    select {
+      background: lighten($brand-light-grey, 15%);
+      width: 45%;
+      padding: 1rem 4rem;
+      height: 50px;
+      margin: 3rem 0 3rem 1rem;
+      font-size: 0.8rem;
+      float: left;
+      vertical-align: middle;
+      border: none;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 300px;
+    border: 1px solid $brand-light-grey;
+    padding: 1rem;
+    font-size: 1rem;
+    color: $brand-dark-grey;
+    font-weight: 100;
+    &:focus {
+      outline: none;
+      border: 1px solid $brand-dark-grey;
+    }
+  }
+
+  input[type="submit"] {
+    width: 40%;
+    padding: 1rem 1.5rem;
+    background: $brand-pink;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    margin-top: 2rem;
+    &:hover {
+      background: $brand-blue;
+      cursor: pointer;
+    }
+
+    &:active {
+      background: darken($brand-blue, 5%);
+      outline: none;
+    }
+
+  }
+
+  h6 {
+    clear: both;
+    margin-top: 2rem;
   }
 
 

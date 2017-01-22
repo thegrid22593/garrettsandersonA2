@@ -1,66 +1,72 @@
 <section class="main-headline">
   <div class="wrapper">
-    <h1>Hire Me</h1>
-    <p>Inquire About Garrett</p>
+    <div class="tcenter two-thirds centered">
+      <h1>Hire Me</h1>
+      <p>So you're interested? Send me a note!</p>
+    </div>
   </div>
 </section>
 
 <section class="inquiry">
   <div class="wrapper">
-    <p class="intro-message">Please fill out the form below to inquire about hiring me. To learn about how I work and the value I can bring to your project, please visit About or to see what I’ve produced for other clients, view my Portfolio.</p>
+    <p class="intro-message two-thirds tcenter centered">Please fill out the form below to inquire about hiring me. To learn about how I work and the value I can bring to your project, please visit About or to see what I’ve produced for other clients, view my Portfolio.</p>
+    <div class="full">
+      <form class="inquiry-form" method="post" action="">
+        <h6 class="tcenter">About You</h6>
+        <div class="input-blocks clearfix">
+          <div class="block">
+            <label for="client-name">Your Name*</label>
+            <input type="text" name="client-name" class="form-control" placeholder="eg. Garrett Sanderson" required [(ngModel)]="name">
+            <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div> -->
+          </div>
+          <div class="block">
+            <label for="client-email">Email Address*</label>
+            <input type="email" name="client-email" class="form-control" placeholder="eg. hello@garrettsanderson.com" [(ngModel)]="email" required>
+          </div>
+          <div class="block">
+            <label for="contact-method">Contact Method</label>
+            <input type="text" name="contact-method" class="form-control" placeholder="eg. (900)-111-1111" [(ngModel)]="phone">
+          </div>
+          <div class="block">
+            <label for="client-website">Your Website</label>
+            <input type="text" name="client-website" class="form-control" placeholder="eg. garrettsanderson.com">
+          </div>
+          <div class="block">
+            <label for="how-did-you-hear">How did you hear about me?</label>
+            <input type="text" name="how-did-you-hear" class="form-control" placeholder="eg. Google, Twitter, Reffered By.. etc">
+          </div>
+        </div>
 
-    <hr>
+        <h6 class="tcenter">Project Details</h6>
 
-    <form class="inquiry-form" method="post" action="">
-      <h6>About You</h6>
-      <hr>
-      <div class="block">
-        <label for="client-name">Your Name*</label>
-        <input type="text" name="client-name" placeholder="eg. Garrett Sanderson">
-      </div>
-      <div class="block">
-        <label for="client-email">Email Address</label>
-        <input type="email" name="client-email" placeholder="eg. hello@garrettsanderson.com">
-      </div>
-      <div class="block">
-        <label for="contact-method">Contact Method</label>
-        <input type="text" name="contact-method" placeholder="eg. (900)-111-1111">
-      </div>
-      <div class="block">
-        <label for="client-website">Your Website</label>
-        <input type="text" name="client-website" placeholder="eg. garrettsanderson.com">
-      </div>
-      <div class="block">
-        <label for="how-did-you-hear">How did you hear about garrettsanderson.com</label>
-        <input type="text" name="how-did-you-hear" placeholder="eg. Google, Twitter, Reffered By.. etc">
-      </div>
+        <p class="tcenter">Please specify a budget and ideal start date. This helps me determine the best solution for your circumstances.</p>
 
-      <h6>Project Details</h6>
-      <hr>
-      <p>Please specify a budget and ideal start date. This helps me determine the best solution for your circumstances.</p>
+        <div class="block">
+          <label for="client-budget">Your Budget</label>
+          <input type="text" name="client-budget" placeholder="eg. $10,000">
+        </div>
+        <div class="block">
+          <label for="start-date">Desired start date</label>
+          <select name="start-date" id="start-dtate">
+            <option value="Within 1 week">Within 1 week</option>
+            <option value="1-2 weeks">1-2 weeks</option>
+            <option value="2-4 weeks">2-4 weeks</option>
+            <option value="1-2 months">1-2 months</option>
+            <option value="2-3 months">2-3 months</option>
+            <option value="3+ months">3+ months</option>
+            <option value="not sure">Not sure</option>
+          </select>
+        </div>
 
-      <div class="block">
-        <label for="client-budget">Your Budget</label>
-        <input type="text" name="client-budget" placeholder="eg. $10,000">
-      </div>
-      <div class="block">
-        <label for="start-date">Desired start date</label>
-        <select name="start-date" id="start-dtate">
-          <option value="Within 1 week">Within 1 week</option>
-          <option value="1-2 weeks">1-2 weeks</option>
-          <option value="2-4 weeks">2-4 weeks</option>
-          <option value="1-2 months">1-2 months</option>
-          <option value="2-3 months">2-3 months</option>
-          <option value="3+ months">3+ months</option>
-          <option value="not sure">Not sure</option>
-        </select>
-      </div>
+        <h6 class="tcenter">Project Description</h6>
+        <p class="tcenter half centered">Please briefly describe your project, what you aim to achieve, what you'd like me to do, and link to any appropriate materials (such as PSDs available via Dropbox).</p>
+        <div class="centered two-thirds">
+          <textarea name="project-description"></textarea>
+          <input type="submit" (ngSubmit)="onSubmit()" name="submit" value="Submit" [disabled]=""class="tcenter centered">
+        </div>
 
-      <h6>Project Description</h6>
-      <p>Please briefly describe your project, what you aim to achieve, what you'd like me to do, and link to any appropriate materials (such as PSDs available via Dropbox).</p>
-      <textarea name="project-description" rows="8" cols="80"></textarea>
 
-      <input type="submit" name="submit" value="Submit">
-    </form>
+      </form>
+    </div>
   </div>
 </section>

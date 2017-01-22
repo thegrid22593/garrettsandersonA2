@@ -8,16 +8,12 @@ header {
 .main-nav {
 	background: $brand-blue;
 	padding: 0.5rem 0;
-	min-height: 80px;
 	svg {
 		max-width: 20px;
 		fill: #fff;
-		float: left;
 	}
 	nav {
-		float: right;
-		width: 50%;
-
+		margin-top: 0.5rem;
 	}
 	ul {
 		list-style: none;
@@ -27,10 +23,26 @@ header {
 				color: #fff;
 				text-transform: uppercase;
 				letter-spacing: 0.1rem;
-				font-size: 0.8rem;
-				&:hover {
-					color: $brand-blue;
+				font-size: 0.7rem;
+				padding: 0 1rem;
+				text-decoration: none;
+				vertical-align: middle;
+				opacity: 0.6;
+				@include transition(0.2s all ease-in-out);
+				&.active {
+					opacity: 1;
 				}
+				svg {
+					vertical-align: middle;
+					margin-right: 0.4rem;
+				}
+			}
+			&:hover {
+				cursor: pointer;
+			}
+			&:hover > a,
+			&:hover > a svg {
+				opacity: 1;
 			}
 		}
 	}
