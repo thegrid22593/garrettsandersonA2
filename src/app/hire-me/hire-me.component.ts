@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WpService } from '../services/wp-service';
 import * as $ from 'jquery';
 
 @Component({
@@ -11,7 +12,7 @@ export class HireMeComponent implements OnInit {
 
   // form
   name: string;
-  constructor() { }
+  constructor(private _wpService: WpService) { }
 
   ngOnInit() {
     $('input').on('click', function() {
@@ -44,7 +45,7 @@ export class HireMeComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('submitted');
+    this._wpService.sendEmail();
   }
 
 
