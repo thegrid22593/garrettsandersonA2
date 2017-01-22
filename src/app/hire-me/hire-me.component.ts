@@ -12,6 +12,14 @@ export class HireMeComponent implements OnInit {
 
   // form
   name: string;
+  email: string;
+  website: string;
+  phone: string;
+  refferal: string;
+  budget: number;
+  startDate: string;
+  projectDescription: string;
+
   constructor(private _wpService: WpService) { }
 
   ngOnInit() {
@@ -45,7 +53,19 @@ export class HireMeComponent implements OnInit {
   }
 
   onSubmit() {
-    this._wpService.sendEmail();
+    let emailInfo = {
+      name: this.name,
+      email: this.email,
+      website: this.website,
+      phone: this.phone,
+      refferal: this.refferal,
+      budget: this.budget,
+      startDate: this.startDate,
+      projectDescription: this.projectDescription
+    }
+    this._wpService.sendEmail(emailInfo).subscribe(error => {
+      console.log(error);
+    })
   }
 
 

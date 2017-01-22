@@ -10,9 +10,9 @@ const api = require('./server/routes/api');
 
 const app = express();
 
-// app.post('/postEmail', function(req, res) {
+// app.post('/sendmail', function(req, res) {
 //
-//   console.log(res);
+//
 //
 // });
 

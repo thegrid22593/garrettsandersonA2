@@ -10,11 +10,11 @@ router.get('/', (req, res) => {
 });
 
 // Get all posts
-router.get('/sendEmail', (req, res) => {
+router.post('/sendEmail', (req, res) => {
   // Get posts from the mock api
   // This should ideally be replaced with a service that connects to MongoDB
-  console.log(res);
-  console.log(req);
+  console.log('you hit the backend');
+  console.log('request', req);
   var smtpConfig = {
       host: 'smtp.gmail.com',
       port: 465,
@@ -30,8 +30,18 @@ router.get('/sendEmail', (req, res) => {
   var mailOptions = {
       from: 'garrett.sanderson@gmail.com',
       to: 'garrett.sanderson@gmail.com',
-      subject: 'Test',
-      text: 'test'
+      subject: 'Website Inquiry',
+      text: 'test',
+      html: `
+        <p>Name: ${req.body.name}</p>
+        <p>Email: ${req.body.email}</p>
+        <p>Phone: ${req.body.phone}</p>
+        <p>Website: ${req.body.website}</p>
+        <p>How Did You Hear About Me?: ${req.body.refferal}</p>
+        <p>Budget: ${req.body.budget}</p>
+        <p>Desired Start Date: ${req.body.startDate}</p>
+        <p>Project Description: ${req.body.projectDescription}</p>
+      `
   };
 
   transporter.sendMail(mailOptions, function(error, info){

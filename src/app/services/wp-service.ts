@@ -31,10 +31,9 @@ export class WpService {
     .catch(this.handleError);
   }
 
-  sendEmail() {
-    this._http.post('/api/sendEmail', {name: 'Foo', email: 'foo@foo.com'})
+  sendEmail(emailInfo) {
+    return this._http.post('/api/sendEmail', emailInfo)
     .map((response: Response) => response.json() )
-    .toPromise()
     .catch(this.handleError);
   }
 
