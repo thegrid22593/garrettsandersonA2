@@ -1,16 +1,18 @@
 <section class="work-detail" *ngIf="activeProject">
   <div class="wrapper">
     <div class="full">
-      <div class="centered full">
-        <img src="{{activeProject.acf.featured_image}}" alt="" width=300>
+      <div class="centered full tcenter">
+        <h1>{{activeProject.acf.project_name}}</h1>
+        <p class="built-with">Built With: {{activeProject.acf.project_intro_details}}</p>
+        <a href="{{activeProject.acf.live_site_button_link}}" target="_blank">
+          <button class="live-site-btn" type="button" name="button">See Live Site</button>
+        </a>
+        <p>{{activeProject.acf.project_details}}</p>
       </div>
-      <h1>{{activeProject.acf.project_name}}</h1>
-      <p>{{activeProject.acf.project_details}}</p>
-
-      <h4>Final Design</h4>
       <div *ngFor="let image of activeProjectImages">
         <img src="{{image.final_design_image}}" alt="">
       </div>
+      <img src="{{activeProject.acf.featured_image}}" alt="">
     </div>
   </div>
 </section>
