@@ -9,7 +9,8 @@ import { WpService } from '../../services/wp-service';
 })
 export class WorkDetailComponent implements OnInit {
   public activeProject;
-  public activeProjectImages;
+  public activeProjectImages = Array;
+  public goalsObjectives = Array;
   constructor(private _route: ActivatedRoute, private _wpService: WpService) { }
 
   ngOnInit() {
@@ -18,6 +19,7 @@ export class WorkDetailComponent implements OnInit {
       this.activeProject = result;
       console.log('activeProject:', this.activeProject);
       this.activeProjectImages = this.activeProject.acf.final_design_presentation;
+      this.goalsObjectives = this.activeProject.acf.goals_and_objectives;
     });
   }
 
