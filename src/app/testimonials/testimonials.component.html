@@ -2,18 +2,22 @@
   <div class="wrapper">
     <div class="full">
       <h2>What My Clients Are Saying</h2>
-      <div  *ngFor="let testimonial of testimonials" class="testimonial">
-        <p class="testimonial-content">{{testimonial.acf.testimonial_text}}</p>
-        <span>{{testimonial.acf.testimonial_author_name}}</span>
-        <span>{{testimonial.acf.testimonial_client}}</span>
+      <swiper [config]="config">
+      <div class="swiper-wrapper">
+        <div  *ngFor="let testimonial of testimonials" class="testimonial swiper-slide">
+          <p class="testimonial-content">{{testimonial.acf.testimonial_text}}</p>
+          <span>{{testimonial.acf.testimonial_author_name}}</span>
+          <span>{{testimonial.acf.testimonial_client}}</span>
+        </div>
       </div>
-    </div>
-
-
-    <div *ngFor="let testimonial of testimonials" class="testimonial-select">
-      <div class="select"><img src="{{testimonial.acf.client_logo}}" alt="{{testimonial.acf.testimonial_client}}"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </swiper>
     </div>
   </div>
+
+
 
 
 </section>

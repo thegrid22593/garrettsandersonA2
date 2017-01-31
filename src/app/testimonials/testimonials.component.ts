@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WpService } from '../services/wp-service';
+import { SwiperModule } from 'angular2-swiper-wrapper';
+import { SwiperConfigInterface } from 'angular2-swiper-wrapper';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,8 +10,11 @@ import * as $ from 'jquery';
   styleUrls: ['./testimonials.component.scss']
 })
 
+
+
 export class TestimonialsComponent implements OnInit {
   public testimonials: any;
+  public config: Object;
   constructor(private _wpService: WpService) { }
 
   ngOnInit() {
@@ -17,6 +22,18 @@ export class TestimonialsComponent implements OnInit {
       this.testimonials = result;
       console.log(this.testimonials);
     });
+
+    this.config = {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      spaceBetween: 30,
+      slidesPerView: 1,
+      autoplay: 4000,
+      loop: true
+    }
+
   }
 
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-router/routing.module';
+import { SwiperModule } from '../../node_modules/angular2-useful-swiper';
 
 import {WpService} from './services/wp-service';
 
@@ -30,7 +31,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SwiperModule
   ],
   providers: [WpService],
   bootstrap: [AppComponent]
