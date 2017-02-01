@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { WpService } from '../services/wp-service';
-import { SwiperModule } from 'angular2-swiper-wrapper';
-import { SwiperConfigInterface } from 'angular2-swiper-wrapper';
 import * as $ from 'jquery';
 
 @Component({

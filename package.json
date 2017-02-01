@@ -22,6 +22,7 @@
     "@angular/platform-browser": "^2.3.1",
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
+    "angular2-useful-swiper": "^3.0.0",
     "axios": "^0.15.3",
     "body-parser": "^1.16.0",
     "bootstrap-sass": "^3.3.7",
