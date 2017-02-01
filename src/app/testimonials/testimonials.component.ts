@@ -24,13 +24,14 @@ export class TestimonialsComponent implements OnInit {
     });
 
     this.config = {
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      spaceBetween: 30,
-      slidesPerView: 1,
-      autoplay: 4000,
+      // pagination: '.swiper-pagination',
+      // paginationClickable: true,
+      // nextButton: '.swiper-button-next',
+      // prevButton: '.swiper-button-prev',
+      // spaceBetween: 30,
+      // slidesPerView: 1,
+      autoplay: 5000,
+      centeredSlides: true,
       loop: true
     }
 
