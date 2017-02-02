@@ -10,7 +10,6 @@ export class HomeComponent implements OnInit {
   public title: string;
   public subTitle: string;
   public backgroundImage: string;
-  
   constructor() {
     this.backgroundImage = '../assets/main-bg.jpg';
     this.title = 'Responsive Front End Web Development';
@@ -34,5 +33,5 @@ export class HomeComponent implements OnInit {
         $('.main-nav').removeClass('scrolled');
       }
     });
-  }
+    }
 }
