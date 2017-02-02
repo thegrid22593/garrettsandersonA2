@@ -1,9 +1,11 @@
 @import '../../scss/base';
 
 .central-display {
-  background: $brand-blue;
-  height: 700px;
+  // background: $brand-blue;
+  height: 100vh;
   position: relative;
+  background-position: center;
+  background-size: cover;
   .headlines {
     @include center-align;
     text-align: center;

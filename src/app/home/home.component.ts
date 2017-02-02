@@ -9,7 +9,10 @@ import * as $ from 'jquery';
 export class HomeComponent implements OnInit {
   public title: string;
   public subTitle: string;
+  public backgroundImage: string;
+  public isHome: boolean = false;
   constructor() {
+    this.backgroundImage = '../assets/main-bg.jpg';
     this.title = 'Responsive Front End Web Development';
     this.subTitle = 'HTML, CSS, JavaScript, Angular, SASS, Bower, Performance, WordPress';
   }
@@ -20,8 +23,16 @@ export class HomeComponent implements OnInit {
       console.log('working');
       let section = $(this).attr("href");
       $("html, body").animate({
-          scrollTop: $(section).offset().top + 40
+          scrollTop: $(section).offset().top - 55
       }, 400);
+    });
+
+    $(window).on('scroll', function() {
+      if($(window).scrollTop() >= 1) {
+        $('.main-nav').addClass('scrolled');
+      } else {
+        $('.main-nav').removeClass('scrolled');
+      }
     });
   }
 }

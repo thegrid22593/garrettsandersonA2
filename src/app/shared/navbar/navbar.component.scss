@@ -6,9 +6,48 @@ header {
 }
 
 .main-nav {
-	background: $brand-blue;
+	background: none;
+	position: fixed;
+	z-index: 20;
+	width: 100%;
 	padding: 1rem 0;
 	border-bottom: 1px solid rgba(255,255,255, 0.2);
+	@include transition(0.2s all ease-in-out);
+	&.scrolled {
+		background: #fff;
+		padding: 0.5rem 0;
+		border-bottom: none;
+		svg {
+			fill: $brand-blue;
+		}
+		ul {
+			li {
+				a {
+					color: $brand-dark-grey;
+					&.active {
+						color: $brand-blue;
+						svg {
+							fill: $brand-blue;
+						}
+					}
+					svg {
+						fill: $brand-dark-grey;
+					}
+				}
+				&:hover {
+					cursor: pointer;
+				}
+				&:hover > a,
+				&:hover > a svg {
+					opacity: 1;
+					fill: darken($brand-dark-grey, 15%);
+				}
+				&:hover > a.active svg {
+					fill: $brand-blue;
+				}
+			}
+		}
+	}
 	svg {
 		max-width: 20px;
 		fill: #fff;
@@ -24,7 +63,7 @@ header {
 				color: #fff;
 				text-transform: uppercase;
 				letter-spacing: 0.1rem;
-				font-size: 0.7rem;
+				font-size: 0.6rem;
 				padding: 0 1rem;
 				text-decoration: none;
 				vertical-align: middle;
@@ -32,10 +71,16 @@ header {
 				@include transition(0.2s all ease-in-out);
 				&.active {
 					opacity: 1;
+					color: white;
+				}
+				&.active > svg {
+					fill: white;
 				}
 				svg {
 					vertical-align: middle;
 					margin-right: 0.4rem;
+					max-width: 15px;
+
 				}
 			}
 			&:hover {
@@ -44,6 +89,7 @@ header {
 			&:hover > a,
 			&:hover > a svg {
 				opacity: 1;
+				fill: white;
 			}
 		}
 	}

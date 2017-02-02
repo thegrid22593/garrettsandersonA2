@@ -9,6 +9,7 @@ import * as $ from 'jquery';
 })
 export class HireMeComponent implements OnInit {
   public activeInput: boolean;
+  public isHome: boolean = false;
 
   // form
   name: string;

@@ -1,11 +1,11 @@
-  <section class="central-display">
+  <section class="central-display" [ngStyle]="{'background-image': 'url('+ backgroundImage +')'}">
     <div class="headlines">
       <h1>{{title}}</h1>
       <h4>{{subTitle}}</h4>
       <a class="see-work" id="click" href="#work">See Work</a>
     </div>
   </section>
-  
+
   <app-work id="work"></app-work>
 
   <section class="skills-and-passions">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  public isHome: boolean;
+  constructor(private _route: ActivatedRoute, private _router: Router) { }
 
   ngOnInit() {
+    // console.log(this._route.snapshot);
   }
-
 }
