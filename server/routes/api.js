@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
+const db = require('./../db/db.js');
 
 /* GET api listing. */
 router.get('/', (req, res) => {
@@ -9,6 +10,8 @@ router.get('/', (req, res) => {
   res.send('api works');
 
 });
+
+console.log(db.emailModel);
 
 // Get all posts
 router.post('/sendEmail', (req, res) => {
