@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
@@ -20,6 +21,7 @@ router.post('/sendEmail', (req, res) => {
       port: 465,
       secure: true,
       auth: {
+        // this auth is for app passwords from google
           user: 'garrett.sanderson@gmail.com',
           pass: 'rlbgaibqnensothb'
       }
