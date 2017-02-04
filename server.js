@@ -6,7 +6,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const db = require('./server/db/db');
-const webProject = require('./server/models/web-projects');
+const webProject = require('./server/models/email-inquiry');
 
 
 // Get our API routes
