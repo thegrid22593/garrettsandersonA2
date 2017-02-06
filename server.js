@@ -5,17 +5,14 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const db = require('./server/db/db');
+const webProject = require('./server/models/email-inquiry');
+
 
 // Get our API routes
 const api = require('./server/routes/api');
 
 const app = express();
-
-// app.post('/sendmail', function(req, res) {
-//
-//
-//
-// });
 
 // Parsers for Post Data
 app.use(bodyParser.json());
@@ -27,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // Set our api routes
 app.use('/api', api);
 
-// Catch all other routes and return the index file
+// Catch all other routes and return the index file that is attatched to Angular 2
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
