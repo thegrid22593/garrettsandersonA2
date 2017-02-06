@@ -18,11 +18,8 @@ export class NavbarComponent implements OnChanges {
     this.routeChange.emit();
   }
 
-  updateState() {
-  }
-
   ngOnChanges() {
     this.isHome = this.isHome;
-    console.log('nav', this.isHome);
+    // console.log('nav', this.isHome);
   }
 }

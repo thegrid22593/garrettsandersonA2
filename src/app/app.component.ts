@@ -24,32 +24,15 @@ export class AppComponent implements OnInit {
     let url: string;
     this._router.events.subscribe((val) =>{
       let url = val.url;
-      console.log('url', url);
+      // console.log('url', url);
 
       if(url == '/home' || url == '' || url == '/') {
         this.isHome = true;
       } else {
         this.isHome = false;
       }
-      console.log(this.isHome);
+      // console.log(this.isHome);
     });
-
-
-
-    // switch(url) {
-    //   case '/home':
-    //     this.isHome = true;
-    //     break;
-    //   case '/':
-    //     this.isHome = true;
-    //     break;
-    //   case '':
-    //     this.isHome = true;
-    //     break;
-    //   default:
-    //     this.isHome = false;
-    // }
-    // console.log(this.isHome);
   }
 
 
