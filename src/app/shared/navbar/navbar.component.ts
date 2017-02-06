@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
+import {Location} from '@angular/common';
 import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -6,10 +7,22 @@ import {Router, ActivatedRoute} from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
-  constructor(private _route: ActivatedRoute, private _router: Router) { }
-
+export class NavbarComponent implements OnChanges {
+  constructor(private _route: ActivatedRoute, private _router: Router, private location: Location) { }
+  @Output() routeChange = new EventEmitter();
+  @Input() isHome:boolean;
   ngOnInit() {
-    console.log(this._route.snapshot);
+  }
+
+  fireRouteChange(e) {
+    this.routeChange.emit(e);
+  }
+
+  updateState() {
+  }
+
+  ngOnChanges() {
+    this.isHome = this.isHome;
+    console.log('nav', this.isHome);
   }
 }
