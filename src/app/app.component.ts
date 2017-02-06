@@ -11,27 +11,45 @@ import * as _ from 'lodash';
 export class AppComponent implements OnInit {
   public isHome: boolean;
   constructor(private _router:Router, private _location: Location, private _route: ActivatedRoute) {
-    console.log(this._router.url);
+    console.log('app component', this._router.url);
   }
 
   ngOnInit() {
     this._router.navigate(['']);
     this._router.navigate(['home']);
+    this.routeChange();
   }
 
-  routeChange(e) {
-    // console.log(e.path);
-    console.log(this._route.snapshot.url);
-    // let index = e.path.indexOf('html');
-    // console.log(e.path[1]);
-    // // console.log(e.path[index]);
-    // if(e.path[1].innerText !== 'HOME' || e.path[1].innerText !== '') {
-    //   this.isHome = false;
-    //   console.log(this.isHome);
-    // } else {
-    //   this.isHome = true;
-    //   console.log(this.isHome);
+  routeChange() {
+    let url: string;
+    this._router.events.subscribe((val) =>{
+      let url = val.url;
+      console.log('url', url);
+
+      if(url == '/home' || url == '' || url == '/') {
+        this.isHome = true;
+      } else {
+        this.isHome = false;
+      }
+      console.log(this.isHome);
+    });
+
+
+
+    // switch(url) {
+    //   case '/home':
+    //     this.isHome = true;
+    //     break;
+    //   case '/':
+    //     this.isHome = true;
+    //     break;
+    //   case '':
+    //     this.isHome = true;
+    //     break;
+    //   default:
+    //     this.isHome = false;
     // }
+    // console.log(this.isHome);
   }
 
 

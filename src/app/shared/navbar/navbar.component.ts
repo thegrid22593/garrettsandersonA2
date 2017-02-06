@@ -15,7 +15,7 @@ export class NavbarComponent implements OnChanges {
   }
 
   fireRouteChange(e) {
-    this.routeChange.emit(e);
+    this.routeChange.emit();
   }
 
   updateState() {
