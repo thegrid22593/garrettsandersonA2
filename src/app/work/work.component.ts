@@ -15,6 +15,21 @@ export class WorkComponent implements OnInit {
   constructor(private _wpService: WpService, private _router: Router) { }
 
   ngOnInit() {
+    // var item = {
+    //   email: 'garrett.sanderson@gmail.com',
+    //   first_name: 'Garrett',
+    //   gender: 'Male',
+    //   id: 6,
+    //   ip_address: '188.93.312.233',
+    //   last_name: 'Sanderson'
+    // }
+    // this._wpService.getjson().then(result => {
+    //   console.log(result);
+    // });
+    //
+    // this._wpService.addUser(JSON.stringify(item)).then(result => {
+    //   console.log(result);
+    // });
     if(!localStorage.getItem('projects')) {
       this.loading = true;
       this._wpService.getAllWebProjects().then(result => {
