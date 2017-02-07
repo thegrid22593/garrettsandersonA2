@@ -8,6 +8,7 @@ import * as $ from 'jquery';
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss']
 })
+
 export class WorkComponent implements OnInit {
   public allWebProjects: any;
   public loading: boolean = false;
