@@ -6,6 +6,9 @@ import { HomeComponent } from '../home/home.component';
 import { HireMeComponent } from '../hire-me/hire-me.component';
 import { WorkDetailComponent } from '../work/work-detail/work-detail.component';
 import { WorkComponent } from '../work/work.component';
+import { AdminComponent } from '../admin/admin.component';
+import {AddProjectComponent} from '../admin/add-project/add-project.component';
+import {AddTestimonialComponent} from '../admin/add-testimonial/add-testimonial.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +35,22 @@ const appRoutes: Routes = [
   {
     path: 'work/:slug',
     component: WorkDetailComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      {
+        path: 'add-project',
+        pathMatch: 'full',
+        component: AddProjectComponent
+      },
+      {
+        path: 'add-testimonial',
+        pathMatch: 'full',
+        component: AddTestimonialComponent
+      }
+    ]
   }
 ];
 

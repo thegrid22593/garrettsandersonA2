@@ -1,0 +1,10 @@
+<form action="" class="add-project-form">
+  <div class="form-group">
+    <label for="project-name">Project Name</label>
+    <input type="text" class="form-control" id="project-name" [(ngModel)]="projectName" name="project-name" required>
+  </div>
+  <div class="form-group">
+    <label for="project-description">Project Description</label>
+    <textarea name="project-description" id="project-description" class="form-control" rows="8" cols="80"[(ngModel)]="projectDescription" name="project-description"></textarea>
+  </div>
+</form>

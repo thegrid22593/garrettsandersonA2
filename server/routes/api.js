@@ -4,6 +4,7 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const db = require('./../db/db.js');
 const emailModel = require('./../models/email-inquiry');
+const testimonialModel = require('./../models/testimonial');
 
 /* GET api listing. */
 router.get('/', (req, res) => {
@@ -12,6 +13,22 @@ router.get('/', (req, res) => {
   res.send('api works');
 
 });
+
+router.post('/testimonial', (req, res) => {
+  console.log(req.body);
+
+  var testimonial = new testimonialModel({
+    author: req.body.testimonialAuthor,
+    client: req.body.testimonialClient,
+    content: req.body.testimonialContent
+  });
+
+  testimonial.save((err) => {
+    if(err) console.log(err);
+  });
+});
+
+
 
 // Get all posts
 router.post('/sendEmail', (req, res) => {
