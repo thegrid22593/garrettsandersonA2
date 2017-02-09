@@ -16,6 +16,7 @@ export class WorkComponent implements OnInit {
   constructor(private _wpService: WpService, private _router: Router) { }
 
   ngOnInit() {
+
     // var item = {
     //   email: 'garrett.sanderson@gmail.com',
     //   first_name: 'Garrett',
