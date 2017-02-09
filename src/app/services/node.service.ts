@@ -15,6 +15,13 @@ export class NodeService {
     .catch(this.handleError);
   }
 
+  getAllProjects() {
+    return this._http.get('/admin/projects')
+    .map((response: Response) => response.json() )
+    .toPromise()
+    .catch(this.handleError);
+  }
+
   private handleError(error: Response) {
     console.error(error);
     if(error.status == 404) {

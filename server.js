@@ -6,11 +6,11 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const db = require('./server/db/db');
-const webProject = require('./server/models/email-inquiry');
 
 
-// Get our API routes
+// Get our routes
 const api = require('./server/routes/api');
+const admin = require('./server/routes/admin');
 
 const app = express();
 
@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
 app.use('/api', api);
+app.use('/admin', admin);
 
 // Catch all other routes and return the index file that is attatched to Angular 2
 app.get('*', (req, res) => {

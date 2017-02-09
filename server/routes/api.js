@@ -28,8 +28,6 @@ router.post('/testimonial', (req, res) => {
   });
 });
 
-
-
 // Get all posts
 router.post('/sendEmail', (req, res) => {
   // Get posts from the mock api
@@ -86,11 +84,6 @@ router.post('/sendEmail', (req, res) => {
       }
       console.log('Message sent: ' + info.response);
   });
-
-  // router.get('https://usX.api.mailchimp.com/3.0/lists', (req, res) => {
-  //   console.log('request', req);
-  //   console.log('response', res);
-  // });
 });
 
 module.exports = router;

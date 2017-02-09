@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NodeService } from '../../services/node.service';
 
 @Component({
   selector: 'app-projects',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-
-  constructor() { }
+  public projects;
+  constructor(private _nodeService: NodeService) { }
 
   ngOnInit() {
+    this._nodeService.getAllProjects().then(result => {
+      console.log(result);
+      this.projects = result;
+    });
+    // console.log(this.projects);
   }
 
 }
