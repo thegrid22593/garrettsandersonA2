@@ -8,7 +8,9 @@ import { WorkDetailComponent } from '../work/work-detail/work-detail.component';
 import { WorkComponent } from '../work/work.component';
 import { AdminComponent } from '../admin/admin.component';
 import {AddProjectComponent} from '../admin/add-project/add-project.component';
+import {ProjectsComponent} from '../admin/projects/projects.component';
 import {AddTestimonialComponent} from '../admin/add-testimonial/add-testimonial.component';
+import {AdminSplashComponent} from '../admin/admin-splash/admin-splash.component';
 
 
 const appRoutes: Routes = [
@@ -41,9 +43,14 @@ const appRoutes: Routes = [
     component: AdminComponent,
     children: [
       {
-        path: 'add-project',
+        path: '',
+        component: AdminSplashComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'projects',
         pathMatch: 'full',
-        component: AddProjectComponent
+        component: ProjectsComponent
       },
       {
         path: 'add-testimonial',

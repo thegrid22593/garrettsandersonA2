@@ -19,6 +19,10 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { AdminComponent } from './admin/admin.component';
 import { AddProjectComponent } from './admin/add-project/add-project.component';
 import { AddTestimonialComponent } from './admin/add-testimonial/add-testimonial.component';
+import { AdminSplashComponent } from './admin/admin-splash/admin-splash.component';
+import { ProjectsComponent } from './admin/projects/projects.component';
+import { AdminTestimonialsComponent } from './admin/testimonials/testimonials.component';
+import { EmailsComponent } from './admin/emails/emails.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { AddTestimonialComponent } from './admin/add-testimonial/add-testimonial
     FooterComponent,
     AdminComponent,
     AddProjectComponent,
-    AddTestimonialComponent
+    AddTestimonialComponent,
+    AdminSplashComponent,
+    ProjectsComponent,
+    TestimonialsComponent,
+    EmailsComponent
   ],
   imports: [
     BrowserModule,
