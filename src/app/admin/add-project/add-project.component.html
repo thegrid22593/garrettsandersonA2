@@ -1,4 +1,4 @@
-<form action="" class="add-project-form">
+<form action="" class="add-project-form" (ngSubmit)="onSubmit()" #projectsForm="ngForm">
   <div class="form-group">
     <label for="project-name">Project Name</label>
     <input type="text" class="form-control" id="project-name" [(ngModel)]="projectName" name="project-name" required>
@@ -12,4 +12,6 @@
     <label for="technologies">Technologies Used</label>
     <input type="text" class="form-control" id="technologies" [(ngModel)]="technologies" name="technologies" required>
   </div>
+
+  <button type="submit" [disabled]="!projectsForm.form.valid">Submit</button>
 </form>

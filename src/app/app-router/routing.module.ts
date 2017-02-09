@@ -53,6 +53,11 @@ const appRoutes: Routes = [
         component: ProjectsComponent
       },
       {
+        path: 'projects/add-project',
+        pathMatch: 'full',
+        component: AddProjectComponent
+      },
+      {
         path: 'add-testimonial',
         pathMatch: 'full',
         component: AddTestimonialComponent

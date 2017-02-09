@@ -22,6 +22,12 @@ export class NodeService {
     .catch(this.handleError);
   }
 
+  addProject(newProject) {
+    return this._http.post('/admin/projects', newProject)
+    .map((response: Response) => response.json() )
+    .catch(this.handleError);
+  }
+
   private handleError(error: Response) {
     console.error(error);
     if(error.status == 404) {

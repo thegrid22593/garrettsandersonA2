@@ -26,7 +26,7 @@ export class AddTestimonialComponent implements OnInit {
 
     this._nodeService.addTestimonial(newTestimonial).subscribe(error => {
       console.log(error);
-    })
+    });
   }
 
 }

@@ -18,4 +18,18 @@ router.get('/projects', (req, res) => {
   });
 });
 
+router.post('/projects', (req, res) => {
+  console.log(req.body);
+
+  var project = new Project({
+    name: req.body.name,
+    description: req.body.description,
+    technologies: req.body.technologies
+  });
+
+  project.save((err) => {
+    if(err) console.log(err);
+  });
+});
+
 module.exports = router;

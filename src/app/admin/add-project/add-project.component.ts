@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NodeService } from '../../services/node.service';
 
 @Component({
   selector: 'add-project',
@@ -12,14 +13,22 @@ export class AddProjectComponent implements OnInit {
   public technologies: string;
   public projectImages: Array<string>;
 
-  constructor() { }
+  constructor(private _nodeService: NodeService) { }
 
   ngOnInit() {
 
   }
 
   onSubmit() {
+    let newProject = {
+      name: this.projectName,
+      description: this.projectDescription,
+      technologies: this.technologies
+    }
 
-  }
+    this._nodeService.addProject(newProject).subscribe(error => {
+      console.log(error);
+    });
 
+}
 }
