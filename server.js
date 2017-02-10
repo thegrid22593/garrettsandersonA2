@@ -4,7 +4,6 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
 const db = require('./server/db/db');
 
 

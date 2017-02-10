@@ -1,7 +1,6 @@
 /*jshint esversion: 6 */
 const express = require('express');
 const router = express.Router();
-const nodemailer = require('nodemailer');
 const db = require('./../db/db.js');
 const testimonialModel = require('./../models/testimonial');
 const Project = require('../models/web-projects');
