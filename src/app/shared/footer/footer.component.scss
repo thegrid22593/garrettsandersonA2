@@ -1,7 +1,23 @@
 @import '../../../scss/base';
 
 footer {
-  background: $brand-dark-grey;
-  height: 20px;
+  border-top: 1px solid #eee;
   margin-top: 4rem;
+  padding-top: 2rem;
+
+  .footer-logo {
+    svg {
+      fill: $brand-blue;
+      max-width: 20px;
+    }
+  }
+
+  .copyright {
+    font-size: 0.6rem;
+    color: $brand-dark-grey;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Lato', sans-serif;
+  }
 }
