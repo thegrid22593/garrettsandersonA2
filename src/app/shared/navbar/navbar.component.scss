@@ -6,17 +6,123 @@ header {
 }
 
 .main-nav {
-	background: none;
+	@include transition(0.2s all ease-in-out);
+	background: white;
+	border-bottom: 1px solid #eee;
 	position: fixed;
 	z-index: 20;
+	top: 0;
 	width: 100%;
 	padding: 1rem 0;
-	border-bottom: 1px solid rgba(255,255,255, 0.2);
-	@include transition(0.2s all ease-in-out);
+
+	svg {
+		max-width: 20px;
+		fill: $brand-blue;
+	}
+	nav {
+		margin-top: 0.5rem;
+	}
+	ul {
+		list-style: none;
+		li {
+			display: inline-block;
+			a {
+				color: $brand-dark-grey;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+				font-size: 0.6rem;
+				padding: 0 1rem;
+				text-decoration: none;
+				vertical-align: middle;
+				opacity: 0.6;
+				@include transition(0.2s all ease-in-out);
+				&.active {
+					opacity: 1;
+					color: $brand-blue;
+				}
+				&.active > svg {
+					fill: $brand-blue;
+				}
+				svg {
+					vertical-align: middle;
+					margin-right: 0.4rem;
+					max-width: 15px;
+					fill: $brand-dark-grey;
+
+				}
+			}
+			&:hover {
+				cursor: pointer;
+			}
+			&:hover > a,
+			&:hover > a svg {
+				opacity: 1;
+				fill: darken($brand-dark-grey, 10%);
+			}
+		}
+	}
+
+	&.home {
+		background: none;
+		position: fixed;
+		z-index: 20;
+		top: 0;
+		width: 100%;
+		padding: 1rem 0;
+		border-bottom: 1px solid rgba(255,255,255, 0.2);
+
+		svg {
+			max-width: 20px;
+			fill: #fff;
+		}
+		nav {
+			margin-top: 0.5rem;
+		}
+		ul {
+			list-style: none;
+			li {
+				display: inline-block;
+				a {
+					color: #fff;
+					text-transform: uppercase;
+					letter-spacing: 0.1rem;
+					font-size: 0.6rem;
+					padding: 0 1rem;
+					text-decoration: none;
+					vertical-align: middle;
+					opacity: 0.6;
+					@include transition(0.2s all ease-in-out);
+					&.active {
+						opacity: 1;
+						color: white;
+					}
+					&.active > svg {
+						fill: white;
+					}
+					svg {
+						vertical-align: middle;
+						margin-right: 0.4rem;
+						max-width: 15px;
+						fill: white;
+
+					}
+				}
+				&:hover {
+					cursor: pointer;
+				}
+				&:hover > a,
+				&:hover > a svg {
+					opacity: 1;
+					fill: white;
+				}
+			}
+		}
+	}
+
 	&.scrolled {
 		background: #fff;
 		padding: 0.5rem 0;
-		border-bottom: none;
+		border-bottom: 1px solid #eee;
 		svg {
 			fill: $brand-blue;
 		}
@@ -45,51 +151,6 @@ header {
 				&:hover > a.active svg {
 					fill: $brand-blue;
 				}
-			}
-		}
-	}
-	svg {
-		max-width: 20px;
-		fill: #fff;
-	}
-	nav {
-		margin-top: 0.5rem;
-	}
-	ul {
-		list-style: none;
-		li {
-			display: inline-block;
-			a {
-				color: #fff;
-				text-transform: uppercase;
-				letter-spacing: 0.1rem;
-				font-size: 0.6rem;
-				padding: 0 1rem;
-				text-decoration: none;
-				vertical-align: middle;
-				opacity: 0.6;
-				@include transition(0.2s all ease-in-out);
-				&.active {
-					opacity: 1;
-					color: white;
-				}
-				&.active > svg {
-					fill: white;
-				}
-				svg {
-					vertical-align: middle;
-					margin-right: 0.4rem;
-					max-width: 15px;
-
-				}
-			}
-			&:hover {
-				cursor: pointer;
-			}
-			&:hover > a,
-			&:hover > a svg {
-				opacity: 1;
-				fill: white;
 			}
 		}
 	}

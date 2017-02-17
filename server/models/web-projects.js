@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const webProject = new Schema({
+const projectSchema = new Schema({
   name: String,
   category: String,
-  projectDetails: String
+  projectDetails: String,
+  projectImages: Array,
+  technologies: String,
 });
 
-const project = mongoose.model('project', webProject);
+const Project = mongoose.model('project', projectSchema);
 
-module.exports = webProject;
+module.exports = Project;

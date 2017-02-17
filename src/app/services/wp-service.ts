@@ -37,6 +37,20 @@ export class WpService {
     .catch(this.handleError);
   }
 
+  getjson(){
+    return this._http.get('/fixtures/test.json')
+    .map((response: Response) => response.json())
+    .toPromise()
+    .catch(this.handleError);
+  }
+
+  addUser(item) {
+    return this._http.post('/fixtures/test.json', item)
+    .map((response: Response) => response.json())
+    .toPromise()
+    .catch(this.handleError);
+  }
+
   private handleError(error: Response) {
         console.error(error);
         if(error.status == 404) {
