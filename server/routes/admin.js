@@ -4,6 +4,8 @@ const router = express.Router();
 const db = require('./../db/db.js');
 const testimonialModel = require('./../models/testimonial');
 const Project = require('../models/web-projects');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
 router.get('/projects', (req, res) => {
   console.log('you hit projects');
@@ -17,8 +19,9 @@ router.get('/projects', (req, res) => {
   });
 });
 
-router.post('/projects', (req, res) => {
+router.post('/projects', upload.single('featured-image'), (req, res, next) => {
   console.log(req.body);
+  console.log(req.file);
 
   var project = new Project({
     name: req.body.name,
