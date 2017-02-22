@@ -1,4 +1,4 @@
-<form action="" class="add-project-form" (ngSubmit)="onSubmit()" #projectsForm="ngForm">
+<form action="" class="add-project-form" (ngSubmit)="onSubmit()" #projectsForm="ngForm" enctype="multipart/form-data" method="post">
   <div class="form-group">
     <label for="project-name">Project Name</label>
     <input type="text" class="form-control" id="project-name" [(ngModel)]="projectName" name="project-name" required>

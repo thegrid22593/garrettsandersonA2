@@ -5,7 +5,17 @@ const db = require('./../db/db.js');
 const testimonialModel = require('./../models/testimonial');
 const Project = require('../models/web-projects');
 const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
+const storage = multer.diskStorage({
+	destination:function(req,file,cb){
+		cb(null,'uploads/');
+	},
+	filename: function(req,file,cb){
+		cb(null,Date.now() + file.originalname);
+
+	}
+});
+
+const upload = multer({ storage: storage });
 
 router.get('/projects', (req, res) => {
   console.log('you hit projects');
@@ -19,8 +29,8 @@ router.get('/projects', (req, res) => {
   });
 });
 
-router.post('/projects', upload.array('photos'), (req, res, next) => {
-  console.log(req.body);
+router.post('/projects', upload.any(), (req, res, next) => {
+  console.log(req.files);
   console.log(req.file);
 
   var project = new Project({

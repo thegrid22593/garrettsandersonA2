@@ -19,9 +19,8 @@ export class AddProjectComponent implements OnInit {
 
   }
 
-  onChange(event) {
-    console.log(event.target.files);
-    this.projectImages = event.target.files;
+  onChange(fileInput: any) {
+    console.log(fileInput);
   }
 
   onSubmit() {
