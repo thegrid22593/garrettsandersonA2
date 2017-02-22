@@ -19,7 +19,7 @@ router.get('/projects', (req, res) => {
   });
 });
 
-router.post('/projects', upload.single('featured-image'), (req, res, next) => {
+router.post('/projects', upload.array('photos'), (req, res, next) => {
   console.log(req.body);
   console.log(req.file);
 

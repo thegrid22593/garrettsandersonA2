@@ -11,7 +11,7 @@ export class AddProjectComponent implements OnInit {
   public projectName: string;
   public projectDescription: string;
   public technologies: string;
-  public projectImages: string;
+  public projectImages: Array<Object>;
 
   constructor(private _nodeService: NodeService) { }
 
@@ -26,6 +26,8 @@ export class AddProjectComponent implements OnInit {
       technologies: this.technologies,
       file: this.projectImages
     }
+
+    console.log(newProject);
 
     this._nodeService.addProject(newProject).subscribe(error => {
       console.log(error);
