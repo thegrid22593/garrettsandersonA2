@@ -11,12 +11,17 @@ export class AddProjectComponent implements OnInit {
   public projectName: string;
   public projectDescription: string;
   public technologies: string;
-  public projectImages: Array<Object>;
+  public projectImages;
 
   constructor(private _nodeService: NodeService) { }
 
   ngOnInit() {
 
+  }
+
+  onChange(event) {
+    console.log(event.target.files);
+    this.projectImages = event.target.files;
   }
 
   onSubmit() {

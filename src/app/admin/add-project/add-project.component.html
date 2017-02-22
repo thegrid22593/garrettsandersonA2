@@ -14,7 +14,7 @@
   </div>
 
   <div class="form-group">
-    <input type="file" name="featured-image" multiple [(ngModel)]="projectImages">
+    <input type="file" name="featured-image" accept="image/*" multiple (change)="onChange($event)">
   </div>
 
   <button type="submit" [disabled]="!projectsForm.form.valid">Submit</button>
