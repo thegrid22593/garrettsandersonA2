@@ -19,7 +19,6 @@ router.get('/projects', (req, res) => {
 });
 
 router.post('/projects', upload.any(), (req, res) => {
-  
   // var project = new Project({
   //   name: req.body.name,
   //   description: req.body.description,
