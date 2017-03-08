@@ -20,21 +20,12 @@ export class AddProjectComponent implements OnInit {
   }
 
   onChange(fileInput: any) {
-    console.log('the file', fileInput.target.files);
     this.projectImages = fileInput.target.files;
     console.log('the file', this.projectImages);
   }
 
   onSubmit() {
-    // let newProject = {
-    //   name: this.projectName,
-    //   description: this.projectDescription,
-    //   technologies: this.technologies,
-    //   file: this.projectImages
-    // }
-
-    // console.log(newProject);
-
+    var array = ['1', '2', '3'];
     this._nodeService.addProject(this.projectImages).subscribe(error => {
       console.log(error);
     });

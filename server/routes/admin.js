@@ -5,13 +5,12 @@ const db = require('./../db/db.js');
 const testimonialModel = require('./../models/testimonial');
 const Project = require('../models/web-projects');
 const multer = require('multer');
-const upload = multer({dest: 'uploads/'});
+
+const upload = multer({ dest: './uploads/' });
 
 router.get('/projects', (req, res) => {
-  console.log('you hit projects');
   Project.find(function (err, projects) {
      if(!err) {
-      //  console.log(projects);
        res.json(projects);
      } else {
        console.log(err);
@@ -19,14 +18,8 @@ router.get('/projects', (req, res) => {
   });
 });
 
-router.post('/projects', upload.any(), (req, res, next) => {
-
-  console.log('body', req.body);
-  console.log('files', req.files);
-
-  // console.log(req.files);
-  // console.log(req.file);
-
+router.post('/projects', upload.any(), (req, res) => {
+  
   // var project = new Project({
   //   name: req.body.name,
   //   description: req.body.description,

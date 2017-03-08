@@ -22,8 +22,8 @@ export class NodeService {
     .catch(this.handleError);
   }
 
-  addProject(newProject) {
-    return this._http.post('/admin/projects', newProject)
+  addProject(project) {
+    return this._http.post('/admin/projects', project)
     .map((response: Response) => response.json() )
     .catch(this.handleError);
   }
