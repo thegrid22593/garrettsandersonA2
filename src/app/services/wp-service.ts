@@ -25,8 +25,8 @@ export class WpService {
   }
 
   getAllTestimonails() {
-    return this._http.get('http://gsandersongraphics.com/wp-json/wp/v2/testimonials')
-    .map((response: Response) => response.json() )
+    return this._http.get('/fixtures/testimonials.json')
+    .map((response: Response) => response.json().testimonials )
     .toPromise()
     .catch(this.handleError);
   }

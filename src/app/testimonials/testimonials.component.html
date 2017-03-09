@@ -5,9 +5,9 @@
       <swiper [config]="config">
       <div class="swiper-wrapper">
         <div  *ngFor="let testimonial of testimonials" class="testimonial swiper-slide">
-          <p class="testimonial-content">{{testimonial.acf.testimonial_text}}</p>
-          <span>{{testimonial.acf.testimonial_author_name}}</span>
-          <span>{{testimonial.acf.testimonial_client}}</span>
+          <p class="testimonial-content">{{testimonial.content}}</p>
+          <span>{{testimonial.clientName}}</span>
+          <span>{{testimonial.client}}</span>
         </div>
       </div>
       <!-- <div class="swiper-pagination"></div>
