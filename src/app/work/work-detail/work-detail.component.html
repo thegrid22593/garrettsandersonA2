@@ -2,9 +2,9 @@
   <div class="wrapper">
     <div class="two-thirds centered">
       <div class="full tcenter">
-        <h1>{{activeProject.acf.project_name}}</h1>
-        <p class="built-with">Built With: {{activeProject.acf.project_intro_details}}</p>
-        <a href="{{activeProject.acf.live_site_button_link}}" target="_blank">
+        <h1>{{activeProject.name}}</h1>
+        <p class="built-with">Built With: {{activeProject.projectIntroDetails}}</p>
+        <a href="{{activeProject.liveURL}}" target="_blank">
           <button class="live-site-btn" type="button" name="button">See Live Site</button>
         </a>
       </div>
@@ -14,9 +14,9 @@
   <div class="wrapper">
     <div class="two-thirds centered">
       <h2>Project Background</h2>
-      <p>{{activeProject.acf.project_description}}</p>
-      <div *ngFor="let image of activeProjectImages">
-        <img src="{{image.final_design_image}}" alt="">
+      <p>{{activeProject.projectDescription}}</p>
+      <div *ngFor="let image of activeProjectImages" class="project-image">
+        <img src="{{image}}" alt="">
       </div>
     </div>
 

@@ -1,9 +1,9 @@
 <section class="work" *ngIf="loading == false">
   <ul class="clearfix">
     <li *ngFor="let webProject of allWebProjects; let i=index;" (click)="workDetail(webProject.slug)">
-      <div *ngIf="i<6" class="project" [style.background-color]="webProject.acf.background_color">
-        <img class="project-logo" src="{{webProject.acf.project_logo}}" alt="webProject.acf.project_name">
-        <div class="project-details">{{webProject.acf.project_intro_details}}</div>
+      <div *ngIf="i<6" class="project" [style.background-color]="webProject.backgroundColor">
+        <img class="project-logo" src="{{webProject.logo}}" alt="webProject.name">
+        <div class="project-details">{{webProject.projectIntroDetails}}</div>
       </div>
     </li>
   </ul>

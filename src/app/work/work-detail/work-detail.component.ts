@@ -7,6 +7,7 @@ import { WpService } from '../../services/wp-service';
   templateUrl: './work-detail.component.html',
   styleUrls: ['./work-detail.component.scss']
 })
+
 export class WorkDetailComponent implements OnInit {
   public activeProject;
   public activeProjectImages = Array;
@@ -15,11 +16,13 @@ export class WorkDetailComponent implements OnInit {
 
   ngOnInit() {
     let slug = this._route.snapshot.params['slug'];
+    console.log(name);
     this._wpService.getWebProjectBySlug(slug).then(result => {
       this.activeProject = result;
       console.log('activeProject:', this.activeProject);
-      this.activeProjectImages = this.activeProject.acf.final_design_presentation;
-      this.goalsObjectives = this.activeProject.acf.goals_and_objectives;
+      this.activeProjectImages = this.activeProject.images;
+      console.log(this.activeProjectImages);
+      // this.goalsObjectives = this.activeProject.acf.goals_and_objectives;
     });
   }
 

@@ -11,15 +11,15 @@ export class WpService {
 
 
   getAllWebProjects() {
-    return this._http.get('http://gsandersongraphics.com/wp-json/wp/v2/web-projects')
-    .map((response: Response) => response.json() )
+    return this._http.get('/fixtures/projects.json')
+    .map((response: Response) => response.json().projects )
     .toPromise()
-    .catch(this.handleError)
+    .catch(this.handleError);
   }
 
   getWebProjectBySlug(slug: string) {
-    return this._http.get('http://gsandersongraphics.com/wp-json/wp/v2/web-projects')
-    .map((response: Response) => _.find(response.json(), {'slug': slug}))
+    return this._http.get('/fixtures/projects.json')
+    .map((response: Response) => _.find(response.json().projects, {'slug': slug}))
     .toPromise()
     .catch(this.handleError);
   }

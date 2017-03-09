@@ -17,26 +17,11 @@ export class WorkComponent implements OnInit {
 
   ngOnInit() {
 
-    // var item = {
-    //   email: 'garrett.sanderson@gmail.com',
-    //   first_name: 'Garrett',
-    //   gender: 'Male',
-    //   id: 6,
-    //   ip_address: '188.93.312.233',
-    //   last_name: 'Sanderson'
-    // }
-    // this._wpService.getjson().then(result => {
-    //   console.log(result);
-    // });
-    //
-    // this._wpService.addUser(JSON.stringify(item)).then(result => {
-    //   console.log(result);
-    // });
     if(!localStorage.getItem('projects')) {
       this.loading = true;
       this._wpService.getAllWebProjects().then(result => {
         this.allWebProjects = result;
-        localStorage.setItem('projects', JSON.stringify(this.allWebProjects));
+        // localStorage.setItem('projects', JSON.stringify(this.allWebProjects));
         console.log(this.allWebProjects);
         this.loading = false;
       });
@@ -48,7 +33,6 @@ export class WorkComponent implements OnInit {
   }
 
   workDetail(slug) {
-    console.log(slug);
     this._router.navigate(['work', slug]);
   }
 
