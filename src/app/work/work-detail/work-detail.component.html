@@ -11,16 +11,26 @@
     </div>
   </div>
   <hr>
-  <div class="wrapper">
-    <div class="two-thirds centered">
-      <h2>Project Background</h2>
-      <p>{{activeProject.projectDescription}}</p>
-      <div *ngFor="let image of activeProjectImages" class="project-image">
-        <img src="{{image}}" alt="">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 col-lg-2 col-lg-offset-2">
+        <nav class="project-navigation">
+          <ul>
+            <li>Project Description</li>
+            <li>Technologies Used</li>
+            <li>User Interface</li>
+            <li>User Experience</li>
+          </ul>
+        </nav>
+        </div>
+        <div class="col-md-8 col-lg-9 col-sm-12">
+          <h2>Project Background</h2>
+          <p>{{activeProject.projectDescription}}</p>
+          <div *ngFor="let image of activeProjectImages" class="project-image">
+            <img src="{{image}}" alt="">
+          </div>
+        </div>
       </div>
     </div>
-
-
-  </div>
 
 </section>

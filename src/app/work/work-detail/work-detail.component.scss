@@ -61,3 +61,16 @@
     }
   }
 }
+
+
+.project-navigation {
+
+  ul {
+    list-style: none;
+    li {
+      color: $brand-grey;
+      padding: 0.5rem 0;
+    }
+  }
+  
+}
