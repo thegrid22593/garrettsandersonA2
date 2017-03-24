@@ -1,44 +1,56 @@
 @import '../../scss/base';
 
 .work {
-  ul {
-    list-style: none;
-    li {
-      .project {
-        min-height: 400px;
-        width: calc(100%/3);
-        float: left;
+    .project {
+        height: 80vh;
+        background-position: center !important;
+        background-size: cover !important;
+        width: 100%;
         position: relative;
-        img.project-logo {
-          max-width: 200px;
-          @include transition(0.18s transform ease-in-out);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          -webkit-transform: translate(-50%, -50%) scale(1);
-          -ms-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
+
+    .project-details {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        .project-title {
+            h2 {
+                color: $brand-white;
+                font-size: 2.2rem;
+                font-weight: 700;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                font-family: 'Lato';
+            }
         }
-        .project-details {
-          position: absolute;
-          bottom: -37px;
-          background: rgba(0,0,0, 0.8);
-          width: 100%;
-          padding: 0.4rem 1rem;
-          color: white;
-          @include transition(0.2s all ease-in-out);
-        }
-      }
-      &:hover > .project img {
-        -webkit-transform: translate(-50%, -50%) scale(0.8);
-        -ms-transform: translate(-50%, -50%) scale(0.8);
-        transform: translate(-50%, -50%) scale(0.8);
-        transform-origin: center;
-        cursor: pointer;
-      }
-      &:hover > .project .project-details {
-        bottom: 0;
-      }
     }
-  }
+        img.project-logo {
+            max-width: 200px;
+            @include transition(0.18s transform ease-in-out);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%) scale(1);
+            -ms-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+        }
+        // .project-details {
+        //     position: absolute;
+        //     bottom: -37px;
+        //     background: rgba(0,0,0, 0.8);
+        //     width: 100%;
+        //     padding: 0.4rem 1rem;
+        //     color: white;
+        //     @include transition(0.2s all ease-in-out);
+        // }
+    }
+    // &:hover > .project img {
+    //     -webkit-transform: translate(-50%, -50%) scale(0.8);
+    //     -ms-transform: translate(-50%, -50%) scale(0.8);
+    //     transform: translate(-50%, -50%) scale(0.8);
+    //     transform-origin: center;
+    //     cursor: pointer;
+    // }
+    // &:hover > .project .project-details {
+    //     bottom: 0;
+    // }
 }
