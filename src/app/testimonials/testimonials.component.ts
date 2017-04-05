@@ -8,8 +8,6 @@ import * as $ from 'jquery';
   styleUrls: ['./testimonials.component.scss']
 })
 
-
-
 export class TestimonialsComponent implements OnInit {
   public testimonials: any;
   public config: Object;

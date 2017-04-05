@@ -1,11 +1,13 @@
 <section class="work" *ngIf="loading == false">
-  <div *ngFor="let webProject of allWebProjects; let i=index;" class="project" [ngStyle]="{'background': 'url(' + webProject.featuredImage + ')', 'background-size': 'cover', 'background-position': 'center'}">
-    <div class="project-details">
+  <div fixedTop *ngFor="let webProject of allWebProjects; let i=index;" class="project" [ngStyle]="{'background': 'url(' + webProject.featuredImage + ')', 'background-size': 'cover', 'background-position': 'center'}">
+    <div class="project-details" [ngsReveal]="{reset: true, origin: 'bottom', duration: 1500, scale: 1, distance: '50px' }">
       <div class="project-title"><h2>{{webProject.name}}</h2></div>
       <div class="project-description">{{webProject.introDescription}}</div>
       <div class="project-technologies"></div>
       <button (click)="workDetail(webProject.slug)">View Project ></button>
     </div>
+    <div class="overlay">
 
+    </div>
   </div>
 </section>

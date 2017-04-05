@@ -7,6 +7,7 @@ import { SwiperModule } from '../../node_modules/angular2-useful-swiper';
 
 import {WpService} from './services/wp-service';
 import {NodeService} from './services/node.service';
+import {NgsRevealModule} from 'ng2-scrollreveal';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -14,15 +15,16 @@ import { WorkComponent } from './work/work.component';
 import { HireMeComponent } from './hire-me/hire-me.component';
 import { HomeComponent } from './home/home.component';
 import { WorkDetailComponent } from './work/work-detail/work-detail.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AdminComponent } from './admin/admin.component';
 import { AddProjectComponent } from './admin/add-project/add-project.component';
 import { AddTestimonialComponent } from './admin/add-testimonial/add-testimonial.component';
 import { AdminSplashComponent } from './admin/admin-splash/admin-splash.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ProjectsComponent } from './admin/projects/projects.component';
-import { AdminTestimonialsComponent } from './admin/testimonials/testimonials.component';
 import { EmailsComponent } from './admin/emails/emails.component';
+
+import {WorkDirective} from './directives/work-directive';
 
 @NgModule({
   declarations: [
@@ -31,23 +33,24 @@ import { EmailsComponent } from './admin/emails/emails.component';
     WorkComponent,
     HireMeComponent,
     HomeComponent,
-    WorkDetailComponent,
     TestimonialsComponent,
+    WorkDetailComponent,
     FooterComponent,
     AdminComponent,
     AddProjectComponent,
     AddTestimonialComponent,
     AdminSplashComponent,
     ProjectsComponent,
-    TestimonialsComponent,
-    EmailsComponent
+    EmailsComponent,
+    WorkDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    SwiperModule
+    SwiperModule,
+    NgsRevealModule.forRoot()
   ],
   providers: [
     WpService,

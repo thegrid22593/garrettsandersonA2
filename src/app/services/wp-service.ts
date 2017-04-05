@@ -11,14 +11,14 @@ export class WpService {
 
 
   getAllWebProjects() {
-    return this._http.get('/fixtures/projects.json')
+    return this._http.get('./fixtures/projects.json')
     .map((response: Response) => response.json().projects )
     .toPromise()
     .catch(this.handleError);
   }
 
   getWebProjectBySlug(slug: string) {
-    return this._http.get('/fixtures/projects.json')
+    return this._http.get('./fixtures/projects.json')
     .map((response: Response) => _.find(response.json().projects, {'slug': slug}))
     .toPromise()
     .catch(this.handleError);

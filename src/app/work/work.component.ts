@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import {WpService} from '../services/wp-service';
+import {WorkDirective} from '../directives/work-directive';
 import {Router} from '@angular/router';
 import * as $ from 'jquery';
 
@@ -9,7 +10,7 @@ import * as $ from 'jquery';
   styleUrls: ['./work.component.scss']
 })
 
-export class WorkComponent implements OnInit {
+export class WorkComponent implements OnInit, AfterContentChecked {
   public allWebProjects: any;
   public loading: boolean = false;
 
@@ -28,12 +29,27 @@ export class WorkComponent implements OnInit {
     } else {
       this.loading = false;
       this.allWebProjects = JSON.parse(localStorage.getItem('projects'));
+
       console.log(this.allWebProjects);
     }
   }
 
   workDetail(slug) {
     this._router.navigate(['work', slug]);
+  }
+
+  ngAfterContentChecked() {
+    let projects = $('.project');
+
+    $(window).on('scroll', function() {
+      var scrollPosition = $(window).scrollTop();
+      // projects.each(function() {
+      //   // console.log($(this).offset().top);
+      //   if(scrollPosition >= $(this).offset().top) {
+      //     $(this).addClass('fixed');
+      //   }
+      // });
+    });
   }
 
 }
