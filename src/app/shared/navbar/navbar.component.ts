@@ -11,11 +11,16 @@ export class NavbarComponent implements OnChanges {
   constructor(private _route: ActivatedRoute, private _router: Router, private location: Location) { }
   @Output() routeChange = new EventEmitter();
   @Input() isHome:boolean;
+  public isCollapsed:boolean;
   ngOnInit() {
   }
 
   fireRouteChange(e) {
     this.routeChange.emit();
+  }
+
+  openMenu() {
+    this.isCollapsed = false;
   }
 
   ngOnChanges() {
