@@ -9,7 +9,7 @@ export class SideMenuComponent implements OnChanges {
   @Input() public isCollapsed:boolean;
 
   constructor() {
-    console.log(this.isCollapsed);
+
   }
 
   ngOnInit() {
@@ -18,6 +18,7 @@ export class SideMenuComponent implements OnChanges {
 
   ngOnChanges() {
     this.isCollapsed = this.isCollapsed;
+    console.log(this.isCollapsed);
   }
 
 }
