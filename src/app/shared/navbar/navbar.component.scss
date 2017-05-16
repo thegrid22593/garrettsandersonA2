@@ -16,6 +16,20 @@ header {
 	}
 }
 
+.side-menu {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: -500px;
+  width: 20%;
+  background: white;
+  z-index: 300;
+  @include transition(0.2s all ease-in-out);
+  &.open {
+    left: 0;
+  }
+}
+
 .main-nav {
 	@include transition(0.2s all ease-in-out);
 	background: white;
