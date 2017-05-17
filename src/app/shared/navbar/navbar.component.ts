@@ -20,7 +20,7 @@ export class NavbarComponent implements OnChanges {
   }
 
   openMenu() {
-    this.isCollapsed = false;
+    this.isCollapsed = !this.isCollapsed;
   }
 
   ngOnChanges() {

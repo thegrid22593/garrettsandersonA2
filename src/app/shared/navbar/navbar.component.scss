@@ -16,32 +16,21 @@ header {
 	}
 }
 
-.side-menu {
-  position: fixed;
-  height: 100vh;
-  top: 0;
-  left: -500px;
-  width: 20%;
-  background: white;
-  z-index: 300;
-  @include transition(0.2s all ease-in-out);
-
-  &.open {
-    left: 0;
-  }
-}
-
 .main-nav {
 	@include transition(0.2s all ease-in-out);
 	background: white;
 	border-bottom: 1px solid #eee;
 	position: fixed;
-	left: 0;
+	left: -380px;
+	width: 20%;
 	z-index: 100;
 	height: 100vh;
 	top: 0;
-	width: 5%;
 	padding: 1rem 0;
+
+	&.open {
+    left: 0px;
+  }
 
 	.logo {
 		width: 100%;
@@ -49,19 +38,23 @@ header {
 		svg.logo {
 			max-width: 15px;
 			fill: $brand-blue;
-			text-align: center;
-			margin: 0 auto;
+			text-align: right;
+			float: right;
+			margin-right: 30px;
+			// margin: 0 auto;
 		}
 	}
 
 	.menu-bars {
 		width: 100%;
 		display: block;
-		text-align: center;
+		height: 30px;
 		svg.menu-bars-icon {
 			max-width: 15px;
 			fill: $brand-grey;
 			margin: 0 auto;
+			float: right;
+			margin-right: 0px;
 			@include transition(0.2s all ease-in-out);
 			&:hover {
 				fill: $brand-blue;
