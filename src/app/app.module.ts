@@ -25,7 +25,6 @@ import { ProjectsComponent } from './admin/projects/projects.component';
 import { EmailsComponent } from './admin/emails/emails.component';
 
 import {WorkDirective} from './directives/work-directive';
-import { SideMenuComponent } from './shared/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +43,6 @@ import { SideMenuComponent } from './shared/side-menu/side-menu.component';
     ProjectsComponent,
     EmailsComponent,
     WorkDirective,
-    SideMenuComponent
   ],
   imports: [
     BrowserModule,
