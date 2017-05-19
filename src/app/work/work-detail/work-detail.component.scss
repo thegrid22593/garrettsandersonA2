@@ -64,6 +64,8 @@
 
 
 .project-navigation {
+  position: fixed;
+  z-index: 900;
 
   ul {
     list-style: none;
@@ -72,5 +74,5 @@
       padding: 0.5rem 0;
     }
   }
-  
+
 }
