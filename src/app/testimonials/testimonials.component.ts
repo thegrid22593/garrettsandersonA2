@@ -14,10 +14,10 @@ export class TestimonialsComponent implements OnInit {
   constructor(private _wpService: WpService) { }
 
   ngOnInit() {
-    this._wpService.getAllTestimonails().then(result => {
-      this.testimonials = result;
-      console.log(this.testimonials);
-    });
+    // this._wpService.getAllTestimonails().then(result => {
+    //   this.testimonials = result;
+    //   console.log('testimonials', this.testimonials);
+    // });
 
     this.config = {
       // pagination: '.swiper-pagination',

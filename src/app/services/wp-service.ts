@@ -11,25 +11,25 @@ export class WpService {
 
 
   getAllWebProjects() {
-    return this._http.get('./fixtures/projects.json')
+    return this._http.get('/assets/fixtures/projects.json')
     .map((response: Response) => response.json().projects )
     .toPromise()
     .catch(this.handleError);
   }
 
   getWebProjectBySlug(slug: string) {
-    return this._http.get('./fixtures/projects.json')
+    return this._http.get('/assets/fixtures/projects.json')
     .map((response: Response) => _.find(response.json().projects, {'slug': slug}))
     .toPromise()
     .catch(this.handleError);
   }
 
-  getAllTestimonails() {
-    return this._http.get('/fixtures/testimonials.json')
-    .map((response: Response) => response.json().testimonials )
-    .toPromise()
-    .catch(this.handleError);
-  }
+  // getAllTestimonails() {
+  //   return this._http.get('./fixtures/testimonials.json')
+  //   .map((response: Response) => response.json().testimonials)
+  //   .toPromise()
+  //   .catch(this.handleError);
+  // }
 
   sendEmail(emailInfo) {
     return this._http.post('/api/sendEmail', emailInfo)
@@ -37,12 +37,12 @@ export class WpService {
     .catch(this.handleError);
   }
 
-  getjson(){
-    return this._http.get('/fixtures/test.json')
-    .map((response: Response) => response.json())
-    .toPromise()
-    .catch(this.handleError);
-  }
+  // getjson(){
+  //   return this._http.get('/fixtures/test.json')
+  //   .map((response: Response) => response.json())
+  //   .toPromise()
+  //   .catch(this.handleError);
+  // }
 
   addUser(item) {
     return this._http.post('/fixtures/test.json', item)
