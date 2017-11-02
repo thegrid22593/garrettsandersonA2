@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit {
   public backgroundImage: string;
   constructor() {
     this.backgroundImage = './assets/main-bg.jpg';
-    this.title = 'Responsive Front End Web Development';
-    this.subTitle = 'HTML, CSS, JavaScript, Angular, SASS, Bower, Performance, WordPress';
+    this.title = 'Paragon';
+    this.subTitle = 'We design and build beautiful user interfaces for the web.';
   }
 
   ngOnInit() {
